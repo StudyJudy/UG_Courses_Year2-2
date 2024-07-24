@@ -1,0 +1,47 @@
+1. 常见素性检验算法的比较分析
+--许斌 张艳硕 吕正宏，2021.4
+在现代密码系统中,大素数对一些加密系统的建立来说有着不可忽视的作用,如RSA密码系统和椭圆曲线密码体制ECC,作为应用最广和最具有发展潜力的两个密码体系,其安全性都是建立在大素数之上。而大素数的检验显得尤为重要,常见的素性检验算法包括Fermat素性检验、Solovay-Strassen素性检验、Miller-Rabin素性检验、Pocklington素性检验、Lucas-Lehmer素性检验、Pepin素性检验、Lucas素性检验、AKS素性检验等算法。素性检验算法可按照待检验数的形式分为一般形式素性检验算法和特殊形式素性检验算法,也可以按照检验结果的准确性分为概率型素性检验算法以及确定型素性检验算法。本文介绍了上述常见的素性检验的理论算法,并从不同分类、软件实现等方面对这些素性检验算法进行了比较分析,最后得出Miller-Rabin素性检验算法的综合效率最高。
+
+2. Implementation of a New Primality Test
+--Henri Cohen, Arjen K. Lenstra，01 Jan 1985
+本文介绍了Adleman-Pomeran-Rumerance-Rumely素数检验的Cohen-Lenstra版本的实现，该测试可以在大约十分钟内证明最多213位十进制数字的素数的素数。
+
+3. Verification of the Miller–Rabin probabilistic primality test
+--Joe Hurd1，01 May 2003
+本文使用 HOL 定理证明器正式证明了 Miller-Rabin 概率原始性检验的正确性。作者定义了一个名为 miller_rabin 的函数，该函数实现概率测试并正式证明了两个特性。第一个属性是，如果输入数字是素数，则该函数返回 true。第二个属性是，如果函数返回 true，则输入数字要么是素数，要么是强骗子。正确性的证明需要在定理证明器中将大量的群论和计算数论形式化。
+
+4. An improved Las Vegas primality test
+--Erich Kaltofen, T. Valente1, Noriko Yui，17 Jul 1989
+本文对Goldwasser-Kilian-Atkin素数检验进行了修改，该测试允许人们有效地将计算机上的大整数认证为素数。修改确定了 Q (√—D) 的 Watson 类方程的根，并应用变换来获得相应的希尔伯特方程的根。本文还提供了有关椭圆曲线的背景材料，描述了Goldwasser-Kilian算法，并提出了一种定理，该算法的正确性以及基于该算法的修改都取决于该定理。
+
+5. Probabilistic Primality Testing
+--Daniel Stüwe and Manuel Eberl，May 13, 2023
+本文讨论了概率素数检验，这是使用随机性的有效检验，可能会错误地将复合数归类为素数，但不会将质数归类为复合数。该论文定义并证明了三种此类测试的正确性：Miller-Rabin、Solovay-Strassen和费马。它还开发了一些数论基础，例如卡迈克尔数和雅各比符号，并使用有效的可执行算法进行计算。
+
+6. PPT  New Low Complexity Deterministic Primality Tests Leveraging Explicit and Implicit Non-Residues
+--Dhananjay Phatak, Alan T. Sherman, Steven D. Houston, Andrew Henry，20 Aug 2019
+本文介绍了三种新的素数猜想：费塔克的基线素数猜想（PBP）、费塔克的广义素性猜想（PGPC）和最远的广义素性猜想（FGPC）。它还根据这些猜想和其他结果提出了新的快速素数测试算法。该论文提供了大量的实验数据和证据，以及特殊案例的基线原始猜想的分析证据。
+
+7. Deterministic Primality Testing
+--Tim Weenink，May 18, 2015
+本文提出了一种确定性素数测试方法，该方法返回素数证书，可以累积这些证书以找到新的素数。该方法涉及多个步骤，包括计算 r 的值，所有剩余步骤都使用该值。步骤 3 和 4 筛选出复合数和素数。本文还讨论了质数在各个数学领域，特别是在密码学中的重要性。
+
+8. Primality Testing is Polynomial-time A Mechanised Verification of the AKS Algorithm
+--Hing Lun Joseph Chan，01 Jan 2019
+本文正式证明了定理证明者HOL4中的Agrawal-Kayal-Saxena（AKS）算法，这是一种确定性多项式时间素数检验。本文分为三个部分。前两部分旨在正式证明算法的正确性，第三部分旨在对算法的复杂性进行形式分析。AKS 算法由多个循环组成，本文分析了这些循环的行为以及迭代次数的界限。本文还提出了适用于复杂性循环分析的AKS算法的实现。
+
+9. Strengthening the Baillie-PSW primality test
+--ROBERT BAILLIE, ANDREW FIORI, AND SAMUEL S. WAGSTAFF, JR.，11 Jun 2021
+该论文描述了通过纳入Lucas-V伪素数来显著加强Baillie-PSW素数检验，这些伪素数是通过卢卡斯可能的素数检验的罕见复合数。这种增强几乎没有额外的计算成本，并且提高了区分素数和复合材料的测试能力。作者报告说，如果参数选择得当，没有发现奇数复合整数可以通过这种素数检验组合。
+
+10. Notes on Primality Testing And Public Key Cryptography Part 1: Randomized Algorithms Miller–Rabin and Solovay–Strassen Tests
+--Jean Gallier1•Institutions ，01 Jan 2016
+ Miller–Rabin & Solovay–Strassen Tests
+
+11. The Pseudoprimes to 25 • 10^9
+--Carl Pomerance, J. L. Selfridge and Samuel S. Wagstaff, Jr，2003
+Baillie-PSW 素性检验，一种概率型素性检验算法
+
+12. PRIMES is in P
+--Manindra Agrawal, Neeraj Kayal, and Nitin Saxena，Manindra Agrawal1,01 Sep 2004
+AKS素性检验
